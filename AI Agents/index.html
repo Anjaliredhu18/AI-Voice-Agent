@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI English Tutor - Anjali Redhu</title>
+  <script src="https://cdn.jsdelivr.net/npm/retell-client-js-sdk/dist/retell-client-sdk.umd.js"></script>
+</head>
+<body>
+
+  <h2>🎤 Talk to Your AI English Partner</h2>
+  <button onclick="startConversation()">Start Talking</button>
+  <button onclick="stopConversation()">Stop</button>
+
+  <script>
+    let client;
+
+    async function startConversation() {
+      client = new RetellWebClient({
+        agentId: "agent_1bfa4aa9ab1a71f76d3d38f56c"
+      });
+
+      await client.startCall();
+      alert("Mic Connected! Start speaking.");
+    }
+
+    function stopConversation() {
+      if (client) {
+        client.stopCall();
+        alert("Conversation Ended");
+      }
+    }
+  </script>
+
+</body>
+</html>
